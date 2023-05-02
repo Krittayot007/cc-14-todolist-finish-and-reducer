@@ -7,9 +7,7 @@ import { convertDate } from '../../utils/DateUtils';
 
 
 export function TodoItem({ todo }) {
-    const sharedObj = useContext(TodoContext);
-    const editTodo = sharedObj.editTodo;
-    const deleteTodo = sharedObj.deleteTodo;
+    const { editTodo, deleteTodo } = useContext(TodoContext);
 
     const [isEdit, setIsEdit] = useState(false);
 
