@@ -1,8 +1,8 @@
 import { FaHome,FaSearch } from 'react-icons/fa';
-import { useState, useContext } from 'react';
-import { TodoContext } from '../contexts/TodoContext';
+import { useState } from 'react';
+import { useTodo } from '../hooks/useTodo';
 export function Header() {
-    const {searchTodo} = useContext(TodoContext);
+    const {searchTodo} = useTodo();
 
     const [searchValue,setSearchValue] = useState('')
 

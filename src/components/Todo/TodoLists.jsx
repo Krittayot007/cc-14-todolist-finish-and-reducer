@@ -1,18 +1,14 @@
 import styles from './TodoLists.module.scss';
-import { useContext } from 'react';
-import { TodoContext } from '../../contexts/TodoContext';
+import { useTodo } from '../../hooks/useTodo';
 import { TodoItem } from './TodoItem';
 
 export function TodoLists() {
-	const {todosFilter} = useContext(TodoContext)
+    const { todosFilter } = useTodo();
 
     return (
         <ul className={styles.todoList}>
             {todosFilter?.map((item) => (
-                <TodoItem
-                    todo={item}
-                    key={item.id}
-                />
+                <TodoItem todo={item} key={item.id} />
             ))}
         </ul>
     );
