@@ -1,6 +1,6 @@
 import Myaxios from './axiosConfig';
 
-export const getAllTodo = async () => await Myaxios.get('/todos');
+export const getAllTodos = async () => await Myaxios.get('/todos');
 
 export const createTodo = async (newTodoObj) => await Myaxios.post('/todos', newTodoObj);
 
