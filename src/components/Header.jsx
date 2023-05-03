@@ -1,6 +1,9 @@
 import { FaHome,FaSearch } from 'react-icons/fa';
 import { useState } from 'react';
 import { useTodo } from '../hooks/useTodo';
+import { Avatar } from '@mui/material';
+import UserPhoto from '../assets/user.jpg'
+
 export function Header() {
     const {searchTodo} = useTodo();
 
@@ -28,6 +31,9 @@ export function Header() {
                 onChange={handleChange}
                 value={searchValue}
                 />
+            </div>
+            <div>
+                <Avatar src={UserPhoto} alt='user-profile' sx={{width: 45, height: 40, cursor: 'pointer'}}/>
             </div>
         </header>
     );

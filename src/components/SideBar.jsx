@@ -83,7 +83,7 @@ export function SideBar() {
                 <Button text={5} active={false} />
                 <Button text={10} active={false} />
                 <Button text={25} active={false} />
-                <Button text={50} active={true} />
+                <Button text={"logout"} active={true} />
             </section>
         </aside>
     );
