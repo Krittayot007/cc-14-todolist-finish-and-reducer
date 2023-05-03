@@ -1,17 +1,20 @@
-import { useState } from 'react';
-import { useTodo } from '../hooks/useTodo' 
+import { useState } from 'react'; // *1
+import { useTodo } from '../hooks/useTodo';
 import { FaInbox, FaRegCalendar, FaRegCalendarAlt, FaChevronDown } from 'react-icons/fa';
 import { Button } from '../components/Common/Button';
+import { useAuth } from '../hooks/useAuth';
 
 export function SideBar() {
-    const {selectList} = useTodo();
+    const { selectList } = useTodo(); // *3
+    const { logout } = useAuth();
 
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     const handleSelectList = (index) => {
         setSelectedIndex(index);
-        selectList(index);
+        selectList(index); // *
     };
+
     return (
         <aside className='sidebar'>
             <section className='sidebar__generic'>
@@ -83,7 +86,8 @@ export function SideBar() {
                 <Button text={5} active={false} />
                 <Button text={10} active={false} />
                 <Button text={25} active={false} />
-                <Button text={"logout"} active={true} />
+                <Button text={'Log out'} active={true} />
+                <button onClick={logout}>Logout</button>
             </section>
         </aside>
     );
